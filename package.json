@@ -1,0 +1,74 @@
+{
+	"name": "react-electron-template",
+	"version": "0.0.1",
+	"description": "Simple boilerplate for developing an Electron app with React",
+	"author": "Softek",
+	"build": {
+		"appId": "com.br.softernet.appname",
+		"win": {
+			"icon": "build/icon.png"
+		},
+		"publish": [
+			{
+				"provider": "generic",
+				"url": "http://sgi.winconnection.net:8081/App_Name"
+			}
+		],
+		"productName": "App_Name",
+		"copyright": "© 2020 Softek Automação Cormecial",
+		"nsis": {
+			"perMachine": false,
+			"oneClick": false,
+			"allowToChangeInstallationDirectory": false,
+			"artifactName": "App_Name_Setup_${version}.${ext}",
+			"shortcutName": "App_Name"
+		}
+	},
+	"stop": "taskkill -F -IM node.exe",
+	"main": "public/electron.js",
+	"homepage": "./",
+	"private": true,
+	"scripts": {
+		"start-react": "react-scripts start",
+		"build-react": "react-scripts build",
+		"test-react": "react-scripts test --env=jsdom",
+		"eject-react": "react-scripts eject",
+		"build-electron": "electron-builder",
+		"build": "yarn build-react && yarn build-electron",
+		"start": "concurrently \"cross-env BROWSER=none yarn start-react\" \"wait-on http://localhost:3000 && electron .\""
+	},
+	"eslintConfig": {
+		"extends": "react-app"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"dependencies": {
+		"@material-ui/core": "^4.10.2",
+		"@testing-library/jest-dom": "^4.2.4",
+		"@testing-library/react": "^9.3.2",
+		"@testing-library/user-event": "^7.1.2",
+		"cross-env": "^7.0.2",
+		"electron-is-dev": "^1.2.0",
+		"find-process": "^1.4.3",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1",
+		"react-router-dom": "^5.2.0",
+		"react-scripts": "3.4.1"
+	},
+	"devDependencies": {
+		"concurrently": "^5.2.0",
+		"electron": "^9.0.5",
+		"electron-builder": "^22.7.0",
+		"wait-on": "^5.0.1"
+	}
+}

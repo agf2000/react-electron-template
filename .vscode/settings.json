@@ -1,0 +1,28 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+	"files.autoSave": "off",
+	"mssql.connections": [
+		{
+			"server": "127.0.0.1\\sqlexpress",
+			"database": "lvsom",
+			"authenticationType": "SqlLogin",
+			"user": "sa",
+			"password": "",
+			"emptyPasswordInput": false,
+			"savePassword": true,
+			"profileName": "lvsom",
+			"connectTimeout": 15,
+			"encrypt": false,
+			"applicationName": "vscode-mssql"
+		}
+	],
+	"prettier.tabWidth": 4,
+	"prettier.useTabs": true,
+	"editor.wordWrapColumn": 160,
+	"html.format.wrapLineLength": 160,
+	"emmet.syntaxProfiles": { "javascript": "jsx" },
+	"emmet.includeLanguages": {
+		"javascript": "javascriptreact"
+	},
+	"editor.renameOnType": true
+}
